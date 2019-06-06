@@ -45,7 +45,7 @@ const unsigned EMISSION_SPEED_FACTOR                         = 21;
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
 /* Premine amount */
-const uint64_t GENESIS_BLOCK_REWARD                          = UINT64_C(400000000); // 4 million
+const uint64_t GENESIS_BLOCK_REWARD                          = UINT64_C(MONEY_SUPPLY * 40 / 100); // 4 million
 
 /* How to generate a premine:
 
@@ -67,7 +67,7 @@ TurtleCoind --print-genesis-tx --genesis-block-reward-address TRTLv2Fyavy8CXG8BP
 * You should see your premine appear in the previously generated wallet.
 
 */
-const char     GENESIS_COINBASE_TX_HEX[]                     = "011401ff00018088debe010219a36ff1a83b5a089e57333fc8dc82b468e01366527116b46bb2110a9858d987210142a8043cd5a8328fff51b693514be9cf043c72b357889952a3b4221ad95b0e90";
+const char     GENESIS_COINBASE_TX_HEX[]                     = "011401ff00018088debe0102aa64f9a7a2f4a887e18ffb91d2779443de6e12018bca49d3c64df3d4aeb38e9c21014df652a8ab8955d58186cc0b2f8ee160f4d887617b2b51ba3b70e6989fa33076";
 
 static_assert(sizeof(GENESIS_COINBASE_TX_HEX)/sizeof(*GENESIS_COINBASE_TX_HEX) != 1, "GENESIS_COINBASE_TX_HEX must not be empty.");
 
